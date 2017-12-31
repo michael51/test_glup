@@ -1,6 +1,6 @@
 /.idea/
 node_modules/
-#/server/node_modules/
+public/
 dist/
 npm-debug.log
 
