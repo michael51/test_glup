@@ -12,7 +12,7 @@
 - 安装包（具体参考package.json）
 > npm install gulp gulp-if gulp-concat webpack webpack-stream vinyl-named gulp-livereload gulp-plumber gulp-rename gulp-uglify gulp-util yargs --save-dev
 
-- 配置完成后，执行启动命令
+- 配置args完成后，执行启动命令
 > gulp --watch
 
 - 增加热更新

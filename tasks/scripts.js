@@ -8,7 +8,7 @@ import gulpif from 'gulp-if';
 import concat from 'gulp-concat'; //文件拼接
 import webpack from 'webpack';
 import gulpWebpack from 'webpack-stream';
-import named from 'vinyl-named';
+import named from 'vinyl-named'; //文件做标志
 import livereload from 'gulp-livereload'; //热更新
 import plumber from 'gulp-plumber'; //处理文件信息流
 import rename from 'gulp-rename';
@@ -27,21 +27,22 @@ gulp.task('scripts', ()=>{
 			}
 		}))
 		.pipe(named()) //rename file
-		.pipe(gulpWebpack({ //use webpack compile
-			module:{
-				loaders:[{
-					test:/\.js$/,
-					loader:'babel-loader'
-				}]
-			}
-		}), null, (err, stats) =>{
-			log(`Finished '${colors.cyan('scripts')}'`, stats.toString({
-				chunks:false
-			}))
-		})
+		.pipe(
+			gulpWebpack({ //use webpack compile
+				module:{
+					loaders:[{
+						test:/\.js$/,
+						loader:'babel-loader'
+					}]
+				}
+			}), null, (err, stats) => {
+				log(`Finished '${colors.cyan('scripts')}'`, stats.toString({
+					chunks:false
+				}))
+			})
 		.pipe(gulp.dest('server/public/js')) //assign file path
 		/**
-		 * 重新起一个新名字，用于保存压缩的文件
+		 * 备份文件：重新起一个新名字，用于保存压缩的文件
 		 */
 		.pipe(rename({
 			basename: 'cp',
