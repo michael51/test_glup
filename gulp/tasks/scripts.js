@@ -20,11 +20,9 @@ import args from './util/args';
  * 创建scripts任务
  */
 gulp.task('scripts', ()=>{
-	return gulp.src(['app/js/index.js'])//open file
+	return gulp.src(['app/assets/js/index.js'])//open file
 		.pipe(plumber({ //handle error
-			errorHandle: function () {
-
-			}
+			errorHandle: function () {}
 		}))
 		.pipe(named()) //rename file
 		.pipe(
@@ -40,7 +38,7 @@ gulp.task('scripts', ()=>{
 					chunks:false
 				}))
 			})
-		.pipe(gulp.dest('server/public/js')) //assign file path
+		.pipe(gulp.dest('server/public/assets/js')) //assign file path
 		/**
 		 * 备份文件：重新起一个新名字，用于保存压缩的文件
 		 */
@@ -59,6 +57,6 @@ gulp.task('scripts', ()=>{
 				'quote_keys':true
 			}
 		}))
-		.pipe(gulp.dest('server/public/js')) //保存新取名的文件
+		.pipe(gulp.dest('server/public/assets/js')) //保存新取名的文件
 		.pipe(gulpif(args.watch, livereload())) //监听watch参数，执行热更新
 });

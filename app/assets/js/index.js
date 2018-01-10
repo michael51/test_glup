@@ -1,5 +1,5 @@
 //入口
-console.info('app index.js1');
+console.info('app index.js');
 class Test {
 	constructor(){
 		this.a = 'hello2';
@@ -7,4 +7,5 @@ class Test {
 }
 
 let test = new Test();
+
 console.info(test.a);

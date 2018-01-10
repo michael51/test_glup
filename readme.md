@@ -5,9 +5,9 @@
 
 > npm install
 
-- 创建.babelrc文件
+- 创建.babelrc文件（不使用es6语法）
 
-- 创建gulpfile.babel.js文件
+- 创建gulpfile.babel.js文件（使用es6语法）
 
 - 安装包（具体参考package.json）
 > npm install gulp gulp-if gulp-concat webpack webpack-stream vinyl-named gulp-livereload gulp-plumber gulp-rename gulp-uglify gulp-util yargs --save-dev
@@ -15,9 +15,15 @@
 - 配置args完成后，执行启动命令
 > gulp --watch
 
+调试访问
+> http://localhost:3000/
+
+手动指定端口
+> set PORT=2000&&gulp --watch
+
 - 增加热更新
 
-找到以下代码
+server/app.js找到以下代码
 > app.use(express.static(path.join(__dirname, 'public')));
 
 在其后增加热更新语句
