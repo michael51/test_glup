@@ -10,7 +10,7 @@ gulp.task('serve', (cb) => {
 	let server = liveserver.new(['--harmony', 'server/bin/www']);
 	server.start();
 
-	//监听所有js和ejs文件的改变（热更新）
+	//监听相关文件的改变（热更新）
 	gulp.watch(['server/public/**/*.js', 'server/views/**/*.ejs', 'server/public/**/*.css'], function (file) {
 		server.notify.apply(server, [file]); //通知服务器文件发送改变
 	});
