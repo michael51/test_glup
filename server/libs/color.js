@@ -1,4 +1,19 @@
-// 严格模式要用 unicode 的十六进制不能用八进制的 \033
+/**
+ * Console Color  Plugin v1.0.0
+ * console message use color
+ * https://coding.net/u/michaelray/p/jquery-banner/git
+ * Copyright 2017 MichaelRay
+ * Released under the MIT license
+ * ------------------------------
+ * Demo:
+ * let _console =  require('./libs/color');
+ *  _console.info('info');
+ *  _console.debug('debug');
+ *  _console.warn('warn');
+ *  _console.error('error');
+ *  -----------------------------
+ *  严格模式要用 unicode 的十六进制不能用八进制的 \033
+ */
 const styles = {
 	// style:    [ style code, reset code  ]
 	'bold'          : ['\x1B[1m',  '\x1B[22m'],
@@ -32,4 +47,19 @@ Object.keys(styles).map((key) =>
 	color[key] = (text) =>
 		styles[key][0] + text + styles[key][1]);
 
-module['exports'] = color;
+let _console = {
+	info: function (info) {
+		console.info(color.green(info));
+	},
+	warn: function (info) {
+		console.info(color.yellowBG(info));
+	},
+	error: function (info) {
+		console.info(color.red(info));
+	},
+	debug: function (info) {
+		console.info(color.blue(info));
+	},
+};
+
+module['exports'] = _console;
