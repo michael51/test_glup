@@ -1,0 +1,43 @@
+.icon-add:hover, .icon-add, .icon-add_outline, .icon-add_small, .icon-application_osx, .icon-application_osx_add {
+  display: block;
+}
+
+.icon-add:hover, .icon-add, .icon-add_outline, .icon-add_small, .icon-application_osx, .icon-application_osx_add {
+  background-image: url("/assets/icon/sprite.png");
+}
+
+.icon-add:hover {
+  background-position: 0px 0px;
+  width: 16px;
+  height: 16px;
+}
+
+.icon-add {
+  background-position: -20px 0px;
+  width: 16px;
+  height: 16px;
+}
+
+.icon-add_outline {
+  background-position: 0px -20px;
+  width: 16px;
+  height: 16px;
+}
+
+.icon-add_small {
+  background-position: -20px -20px;
+  width: 16px;
+  height: 16px;
+}
+
+.icon-application_osx {
+  background-position: -40px 0px;
+  width: 16px;
+  height: 16px;
+}
+
+.icon-application_osx_add {
+  background-position: -40px -20px;
+  width: 16px;
+  height: 16px;
+}
