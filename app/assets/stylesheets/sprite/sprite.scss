@@ -1,0 +1,57 @@
+%block{
+	display: block;
+}
+
+%backgroundImageUrl {
+	background-image: url("/assets/icon/sprite.png");
+}
+
+
+.icon-add:hover
+{
+	@extend %backgroundImageUrl;
+	background-position: 0px 0px;
+	width: 16px;
+	height: 16px;
+	@extend %block;
+}
+.icon-add
+{
+	@extend %backgroundImageUrl;
+	background-position: -20px 0px;
+	width: 16px;
+	height: 16px;
+	@extend %block;
+}
+.icon-add_outline
+{
+	@extend %backgroundImageUrl;
+	background-position: 0px -20px;
+	width: 16px;
+	height: 16px;
+	@extend %block;
+}
+.icon-add_small
+{
+	@extend %backgroundImageUrl;
+	background-position: -20px -20px;
+	width: 16px;
+	height: 16px;
+	@extend %block;
+}
+.icon-application_osx
+{
+	@extend %backgroundImageUrl;
+	background-position: -40px 0px;
+	width: 16px;
+	height: 16px;
+	@extend %block;
+}
+.icon-application_osx_add
+{
+	@extend %backgroundImageUrl;
+	background-position: -40px -20px;
+	width: 16px;
+	height: 16px;
+	@extend %block;
+}
