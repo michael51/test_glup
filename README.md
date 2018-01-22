@@ -1,4 +1,5 @@
-# 通过express创建项目，带ejs模板
+# 通过express创建项目，带ejs模板。
+生成环境使用的是node.js+ejs。
 
 - 在server目录下创建express套件
 > express -e
@@ -13,7 +14,7 @@
 > npm install gulp gulp-if gulp-concat webpack webpack-stream vinyl-named gulp-livereload gulp-plumber gulp-rename gulp-uglify gulp-util yargs --save-dev
 
 - 配置args完成后，执行启动命令
-> gulp --watch
+> gulp --watchR
 
 调试访问
 > http://localhost:3000/
