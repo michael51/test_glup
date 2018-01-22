@@ -18,9 +18,10 @@ import args from './util/args';
 
 /**
  * 创建scripts任务
+ * 多页面的时候考虑每一个页面配置一个入口
  */
 gulp.task('scripts', ()=>{
-	return gulp.src(['app/assets/js/index.js'])//open file
+	return gulp.src(['app/assets/js/index.js', 'app/assets/js/page1.js'])//open file
 		.pipe(plumber({ //handle error
 			errorHandle: function () {}
 		}))
@@ -60,3 +61,6 @@ gulp.task('scripts', ()=>{
 		.pipe(gulp.dest('server/public/assets/js')) //保存新取名的文件
 		.pipe(gulpif(args.watch, livereload())) //监听watch参数，执行热更新
 });
+
+
+

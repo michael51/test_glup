@@ -1,6 +1,8 @@
 # 通过express创建项目，带ejs模板。
 生成环境使用的是node.js+ejs。
 
+由于线上环境复杂，故public目录下的html为手动维护。
+
 - 在server目录下创建express套件
 > express -e
 
