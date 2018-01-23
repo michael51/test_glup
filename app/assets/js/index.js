@@ -1,6 +1,6 @@
 //入口
 console.info('app index.js');
-import {} from '../../components/index';
+import {} from '../../pages/index';
 class Test {
 	constructor(){
 		this.a = 'hello233';

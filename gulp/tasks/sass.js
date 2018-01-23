@@ -4,7 +4,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 let $ = gulpLoadPlugins();
 
 gulp.task('sass', () => {
-	return gulp.src('app/**/*.scss')
+	return gulp.src(['app/**/*.scss','!app/pages/**/*.scss'])
 		.pipe($.sass({ outputStyle: 'expanded' }))
 		.on('error', $.sass.logError)
 		.pipe($.autoprefixer({

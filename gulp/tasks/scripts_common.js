@@ -17,10 +17,10 @@ import {log,colors} from 'gulp-util'; //命令行工具输出包
 import args from './util/args';
 
 /**
- * 创建scripts任务
- * 多页面的时候考虑每一个页面配置一个入口
+ * 创建scripts_common任务
+ * 打包共享的工具js
  */
-gulp.task('scripts', ()=>{
+gulp.task('scripts_common', ()=>{
 	return gulp.src(['app/assets/js/index.js', 'app/assets/js/page1.js'])//open file
 		.pipe(plumber({ //handle error
 			errorHandle: function () {}
@@ -39,7 +39,26 @@ gulp.task('scripts', ()=>{
 					chunks:false
 				}))
 			})
-		.pipe(gulp.dest('server/public/assets/js')) //assign file path
+	//	.pipe(gulp.dest('server/public/assets/js')) //assign file path
+		/**
+		 * 备份文件：重新起一个新名字，用于保存压缩的文件
+		 */
+		.pipe(rename({
+			basename: 'vender',
+			extname: '.min.js'
+		}))
+		/**
+		 * uglify code
+		 */
+		.pipe(uglify({
+			compress: {
+				properties:false
+			},
+			output: {
+				'quote_keys':true
+			}
+		}))
+		.pipe(gulp.dest('server/public/assets/js')) //保存新取名的文件
 		.pipe(gulpif(args.watch, livereload())) //监听watch参数，执行热更新
 });
 
