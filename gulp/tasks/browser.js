@@ -12,4 +12,7 @@ gulp.task('browser', (cb) => {
 	gulp.watch('app/**/*.ejs', ['pages']);
 	gulp.watch('app/**/*.css', ['css']);
 	gulp.watch('app/**/*.scss', ['sass']);
+	//以下两个目录的scss因为是通过webpack加载，故修改之后，重新打包js
+	gulp.watch(['app/components/**/*.scss','app/pages/**/*.scss'], ['scripts']);
+	//gulp.watch('app/pages/**/*.scss', ['scripts']);
 });

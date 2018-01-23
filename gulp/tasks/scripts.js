@@ -16,6 +16,7 @@ import uglify from 'gulp-uglify'; //处理JS压缩
 import {log,colors} from 'gulp-util'; //命令行工具输出包
 import args from './util/args';
 import path from 'path';
+import ExtractTextPlugin from "extract-text-webpack-plugin";
 
 /**
  * 创建scripts任务
@@ -30,7 +31,8 @@ gulp.task('scripts', ()=>{
 		.pipe(
 			gulpWebpack({
 				externals: {
-					vue: 'window.Vue'
+					vue: 'window.Vue',
+					VueRouter: 'window.VueRouter'
 				},
 				resolve : {
 					alias : {
@@ -41,11 +43,30 @@ gulp.task('scripts', ()=>{
 					}
 				},
 				module:{ //use webpack compile
-					loaders:[{
-						test:/\.js$/,
-						loader:'babel-loader'
-					}]
-				}
+					loaders:[
+						{
+							test:/\.js$/,
+							loader:'babel-loader'
+						},
+						{
+							test: /\.css$/,
+							use: ExtractTextPlugin.extract({
+								fallback: "style-loader",
+								use: "css-loader"
+							})
+						},
+						{
+							test: /\.scss$/,
+							use: ExtractTextPlugin.extract({
+								fallback: "style-loader",
+								use: ['css-loader', 'sass-loader']
+							})
+						},
+					]
+				},
+				plugins: [
+					new ExtractTextPlugin("../stylesheets/components.css"),
+				]
 			}), null, (err, stats) => {
 				log(`Finished '${colors.cyan('scripts')}'`, stats.toString({
 					chunks:false

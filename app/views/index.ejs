@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>新页面</title>
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
-    <link rel="stylesheet" href="assets/stylesheets/index.css">
-    <link rel="stylesheet" href="assets/stylesheets/sprite/sprite.css">
+	<meta charset="UTF-8">
+	<title>新页面</title>
+	<link rel="stylesheet" href="assets/stylesheets/main.css">
+	<link rel="stylesheet" href="assets/stylesheets/index.css">
+	<link rel="stylesheet" href="assets/stylesheets/components.css">
+	<link rel="stylesheet" href="assets/stylesheets/sprite/sprite.css">
 
 </head>
 <body>
-    直接引入components的index
-	<%-include("layout/header.ejs")%>
-    <p><a href="users">Hello Michael Ray2</a></p>
-   <!-- <div class="icon-add"></div>-->
-    <div id="app">
-        <!--<p :class="className">测试绑定class</p>-->
-        <p :class="classArr">测试绑定class</p>
-        <my-component>插槽数据</my-component>
-    </div>
-    <script src="assets/js/index.js"></script>
+	直接引入components的index
+	<%- include("layout/header.ejs") %>
+	<p><a href="users">Hello Michael Ray2</a></p>
+	<!-- <div class="icon-add"></div>-->
+	<div id="app">
+		<!--<p :class="className">测试绑定class</p>-->
+		<p :class="classArr">测试绑定class</p>
+		<button @click="handle('ok', $event)">按钮1</button>
+		<button @click="ff('ok', $event)">按钮2</button>
+		<my-component>插槽数据</my-component>
+	</div>
+
+	<!--测试路由-->
+	<div id="app_router">
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<router-link to="/home">Home</router-link>
+						</li>
+						<li>
+							<router-link to="/list">List</router-link>
+						</li>
+						<li>
+							<router-link :to="{name:'hehe', params: {page: 1}}">具名路由</router-link>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<router-view></router-view>
+		</div>
+	</div>
+
+	<script src="assets/js/index.js"></script>
 </body>
 </html>
