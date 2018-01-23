@@ -1,4 +1,6 @@
+@import "pages/common/header/index.scss"; //导入header
+@import "components/MyComponents/index"; //导入组件
+
 .index {
 	color: blue;
 }
-@import "../common/header/index";

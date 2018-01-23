@@ -15,6 +15,7 @@ import rename from 'gulp-rename';
 import uglify from 'gulp-uglify'; //处理JS压缩
 import {log,colors} from 'gulp-util'; //命令行工具输出包
 import args from './util/args';
+import path from 'path';
 
 /**
  * 创建scripts任务
@@ -27,8 +28,19 @@ gulp.task('scripts', ()=>{
 		}))
 		.pipe(named()) //rename file
 		.pipe(
-			gulpWebpack({ //use webpack compile
-				module:{
+			gulpWebpack({
+				externals: {
+					vue: 'window.Vue'
+				},
+				resolve : {
+					alias : {
+						app      		: path.resolve(__dirname, '../../app'),
+						pages      		: path.resolve(__dirname, '../../app/pages'),
+						components      : path.resolve(__dirname, '../../app/components'),
+						'@'      		: path.resolve(__dirname, '../../')
+					}
+				},
+				module:{ //use webpack compile
 					loaders:[{
 						test:/\.js$/,
 						loader:'babel-loader'

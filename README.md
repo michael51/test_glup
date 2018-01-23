@@ -31,3 +31,17 @@ server/app.js找到以下代码
 
 在其后增加热更新语句
 > app.use(require('connect-livereload')()); //michael热更新
+
+# 模块化相关
+
+## 页面使用组件
+主文件在pages目录下
+在页面主文件中引入
+```
+ import {} from "components/MyComponents";
+ ```
+ 
+在页面的.scss文件中引入
+```
+@import "../../components/MyComponents/index";
+```

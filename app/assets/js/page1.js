@@ -1,1 +1,1 @@
-console.info('page1');
+import {} from 'pages/page1'; //导入页面模块
