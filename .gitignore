@@ -3,6 +3,7 @@ node_modules/
 public/
 dist/
 npm-debug.log
+package-lock.json
 
 index.html
 
