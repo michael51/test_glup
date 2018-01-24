@@ -1,16 +1,24 @@
 import path from 'path';
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 
-const entry_path = 'app/modules/pages/';
+const pageEntryPath = 'app/modules/pages/';
+const libsEntryPath = 'app/assets/js/libs';
 
-//几个独立页面就配置几个
-const entry = [
-	entry_path + 'index/index.js',
-	entry_path + 'page1/index.js'
+/*配置独立页*/
+const pageEntry = [
+	pageEntryPath + 'index/index.js',
+	pageEntryPath + 'page1/index.js'
+];
+
+
+/*配置公共文件*/
+const commonEntry = [
+	libsEntryPath + '*.js'
 ];
 
 export default {
-	entry: entry,
+	pageEntry,
+	commonEntry,
 	externals: {
 		vue: 'window.Vue',
 		VueRouter: 'window.VueRouter'
@@ -57,6 +65,6 @@ export default {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('../stylesheets/[name].css'),
+		 new ExtractTextPlugin('../stylesheets/[name].css')
 	]
 }

@@ -56,6 +56,13 @@ const spritesConfig = {
 				} else {
 					return '.icon-' + name;
 				}
+			},
+			handPosition: (n) => {
+				if (n === '0px') {
+					return 0;
+				} else {
+					return n;
+				}
 			}
 		},
 		//合成css模型

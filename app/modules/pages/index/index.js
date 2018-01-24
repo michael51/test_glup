@@ -6,7 +6,6 @@ import router from "./vue/Router";
 
 require('./index.scss');
 
-
 MyComponents({ name: 'Michael Ray'}); //给组件传递数据
 
 let data = function () {

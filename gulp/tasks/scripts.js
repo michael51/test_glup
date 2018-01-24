@@ -22,11 +22,21 @@ import WebpackConfig from "../../config/webpack.conf";
  * 多页面的时候考虑每一个页面配置一个入口
  */
 gulp.task('scripts', ()=>{
-	return gulp.src( WebpackConfig.entry )//open file
+	return gulp.src( WebpackConfig.pageEntry )
 		.pipe(plumber({ //handle error
 			errorHandle: function () {}
 		}))
-		.pipe(named()) //rename file
+		/*处理文件名*/
+		.pipe(named(function(file) {
+			let fileUrl = file.base;
+			let re = /.*\\(.*)\\/gi;
+
+			while (re.exec(fileUrl) !== null){
+				console.info(RegExp.$1);
+			}
+
+			return RegExp.$1
+		}))
 		.pipe(
 			gulpWebpack({
 				externals	: WebpackConfig.externals,
@@ -51,5 +61,50 @@ gulp.task('scripts', ()=>{
 		.pipe(gulpif(args.watch, livereload())) //监听watch参数，执行热更新
 });
 
+
+/**
+ * 处理公共JS文件
+ */
+gulp.task('scripts-common', ()=>{
+	return gulp.src( WebpackConfig.commonEntry )//open file
+		.pipe(plumber({ //handle error
+			errorHandle: function () {}
+		}))
+		.pipe(named()) //rename file
+		.pipe(
+			gulpWebpack({ //use webpack compile
+				module:{
+					loaders:[{
+						test:/\.js$/,
+						loader:'babel-loader'
+					}]
+				}
+			}), null, (err, stats) => {
+				log(`Finished '${colors.cyan('scripts')}'`, stats.toString({
+					chunks:false
+				}))
+			})
+		//	.pipe(gulp.dest('server/public/assets/js')) //assign file path
+		/**
+		 * 备份文件：重新起一个新名字，用于保存压缩的文件
+		 */
+		.pipe(rename({
+			basename: 'vender',
+			extname: '.min.js'
+		}))
+		/**
+		 * uglify code
+		 */
+		.pipe(uglify({
+			compress: {
+				properties:false
+			},
+			output: {
+				'quote_keys':true
+			}
+		}))
+		.pipe(gulp.dest('server/public/assets/js')) //保存新取名的文件
+		.pipe(gulpif(args.watch, livereload())) //监听watch参数，执行热更新
+});
 
 
