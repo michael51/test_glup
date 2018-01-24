@@ -15,58 +15,33 @@ import rename from 'gulp-rename';
 import uglify from 'gulp-uglify'; //处理JS压缩
 import {log,colors} from 'gulp-util'; //命令行工具输出包
 import args from './util/args';
-import path from 'path';
-import ExtractTextPlugin from "extract-text-webpack-plugin";
+import WebpackConfig from "../../config/webpack.conf";
 
 /**
  * 创建scripts任务
  * 多页面的时候考虑每一个页面配置一个入口
  */
 gulp.task('scripts', ()=>{
-	return gulp.src(['app/assets/js/index.js', 'app/assets/js/page1.js'])//open file
+	return gulp.src( WebpackConfig.entry )//open file
 		.pipe(plumber({ //handle error
 			errorHandle: function () {}
 		}))
 		.pipe(named()) //rename file
 		.pipe(
 			gulpWebpack({
-				externals: {
-					vue: 'window.Vue',
-					VueRouter: 'window.VueRouter'
-				},
-				resolve : {
+				externals	: WebpackConfig.externals,
+/*				resolve : {
 					alias : {
 						app      		: path.resolve(__dirname, '../../app'),
-						pages      		: path.resolve(__dirname, '../../app/pages'),
+						modules      	: path.resolve(__dirname, '../../app/modules'),
+						pages      		: path.resolve(__dirname, '../../app/modules/pages'),
 						components      : path.resolve(__dirname, '../../app/components'),
 						'@'      		: path.resolve(__dirname, '../../')
 					}
-				},
-				module:{ //use webpack compile
-					loaders:[
-						{
-							test:/\.js$/,
-							loader:'babel-loader'
-						},
-						{
-							test: /\.css$/,
-							use: ExtractTextPlugin.extract({
-								fallback: "style-loader",
-								use: "css-loader"
-							})
-						},
-						{
-							test: /\.scss$/,
-							use: ExtractTextPlugin.extract({
-								fallback: "style-loader",
-								use: ['css-loader', 'sass-loader']
-							})
-						},
-					]
-				},
-				plugins: [
-					new ExtractTextPlugin("../stylesheets/components.css"),
-				]
+				},	*/
+				resolve 	: WebpackConfig.resolve,
+				module		: WebpackConfig.module,
+				plugins		: WebpackConfig.plugins
 			}), null, (err, stats) => {
 				log(`Finished '${colors.cyan('scripts')}'`, stats.toString({
 					chunks:false

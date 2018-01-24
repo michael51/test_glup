@@ -1,5 +1,6 @@
 import VueRouter from "VueRouter";
-import Home from "./components/Home";
+import Home from "./Routers/Home/index";
+import List from "./Routers/List";
 
 export default new VueRouter({
 		routes: [
@@ -9,9 +10,7 @@ export default new VueRouter({
 			},
 			{
 				path: '/list',
-				component: {
-					template: '<h1>This is the List page{{$route.path}}</h1>'
-				}
+				component: List
 			},
 			{
 				path: '',

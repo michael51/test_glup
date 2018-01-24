@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import liveserver from 'gulp-live-server';
 import args from './util/args';
+import open from "open";
 
 gulp.task('serve', (cb) => {
 	if (!args.watch) return cb(); //如果不是处于监听状态，则直接返回回调函数。
@@ -9,6 +10,8 @@ gulp.task('serve', (cb) => {
 	// 创建一个服务（端口在server/www配置）
 	let server = liveserver.new(['--harmony', 'server/bin/www']);
 	server.start();
+	console.info('Server Start!');
+	open("http://localhost:3000", "chrome");
 
 	//监听相关文件的改变（热更新）
 	gulp.watch(['server/public/**/*.js', 'server/views/**/*.ejs', 'server/public/**/*.css'], function (file) {

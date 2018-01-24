@@ -1,5 +1,5 @@
 import Vue from "vue";
-import tpl from "./vue.tpl";
+import tpl from "./index.tpl";
 
 export default function (data) {
 	Vue.component('my-component',{

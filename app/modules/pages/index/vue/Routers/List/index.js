@@ -1,7 +1,7 @@
-require('./Home.scss');
+require('./index.scss');
 
 let template = `
-	<h1 class="home">This is the home page  </h1>
+	<h1 class="list"><h1>This is the List page{{$route.path}}</h1>
 `;
 
 export default {

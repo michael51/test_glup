@@ -1,1 +1,7 @@
-body{ color: blue; font-size: 30px}
+@import "modules/reset";
+@import "sprite/sprite.scss";
+
+body{
+	color: blue;
+	font-size: 30px
+}

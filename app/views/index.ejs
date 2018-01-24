@@ -5,15 +5,13 @@
 	<title>新页面</title>
 	<link rel="stylesheet" href="assets/stylesheets/main.css">
 	<link rel="stylesheet" href="assets/stylesheets/index.css">
-	<link rel="stylesheet" href="assets/stylesheets/components.css">
-	<link rel="stylesheet" href="assets/stylesheets/sprite/sprite.css">
 
 </head>
 <body>
 	直接引入components的index
 	<%- include("layout/header.ejs") %>
-	<p><a href="users">Hello Michael Ray2</a></p>
-	<!-- <div class="icon-add"></div>-->
+	<p><a href="users" class="index">Hello Michael Ray2</a></p>
+	 <div class="icon-add">123</div>
 	<div id="app">
 		<!--<p :class="className">测试绑定class</p>-->
 		<p :class="classArr">测试绑定class</p>

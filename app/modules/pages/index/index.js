@@ -1,17 +1,11 @@
 import Vue from "vue";
-import {} from "../common/header";
+import {} from "../../common/header";
 import MyComponents from "components/MyComponents";/*页面使用MyComponts组件*/
-import VueMethods from "./vue/methods";
-import router from "./vue/router";
+import VueMethods from "./vue/Methods";
+import router from "./vue/Router";
 
-/*class Test {
-	constructor(){
-		this.a = 'hello233';
-	}
-}
+require('./index.scss');
 
-let test = new Test();
-console.info(test.a);*/
 
 MyComponents({ name: 'Michael Ray'}); //给组件传递数据
 
@@ -26,8 +20,6 @@ let vm = new Vue({
 	data : data,
 	methods: VueMethods
 });
-
-
 
 let vm_router = new Vue({
 	el: "#app_router",
