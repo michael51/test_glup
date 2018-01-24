@@ -10,7 +10,7 @@ MyComponents({ name: 'Michael Ray'}); //给组件传递数据
 
 let data = function () {
 	return {
-		classArr: ['class1','class2','class3']
+		classArr: ['class1','class2','class3','class4']
 	}
 };
 

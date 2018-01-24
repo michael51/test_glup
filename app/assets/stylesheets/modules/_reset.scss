@@ -1,13 +1,14 @@
 /**
 *CSS reset css重置（权重加强版）
-*By Michael Ray 2018.1.24
+*By Michael Ray 2018.1.24 
 */
+
 html,body{height:100%;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 blockquote,th,td {margin:0;padding:0;}
 fieldset,img {border:0}
-/*address,caption,cite,code,dfn,em,strong,th,var
-{font-style:normal;font-weight:normal}*/
+address,caption,cite,code,dfn,em,strong,th,var
+{font-style:normal;font-weight:normal}
 ol,ul {list-style:none;}
 caption,th {text-align:left}
 h1,h2,h3,h4,h5,h6 {font-size:100%;}
@@ -17,9 +18,10 @@ abbr,acronym { border:0}
 .hand{ cursor:pointer}
 /*文字排版 */
 .f-verdana{ font-family:Verdana, Geneva, sans-serif}
-.f-Yahei{ font-family: Microsoft YaHei, Geneva, sans-serif}
+.f-yahei{ font-family: Microsoft YaHei, Geneva, sans-serif}
 .f-songti{ font-family: SimSun, Geneva, sans-serif}
-.f-Georgia{ font-family:Georgia, Geneva, sans-serif}
+.f-georgia{ font-family:Georgia, Geneva, sans-serif}
+
 .ls10{letter-spacing:10px}
 .f12{font-size:12px}
 .f14{font-size:14px}
@@ -38,23 +40,24 @@ abbr,acronym { border:0}
 .lh200{line-height:200%}
 .lh30{line-height:30px;}
 .unl{text-decoration:underline;}
-.no_unl, #body .no_unl{text-decoration:none;}
+.no-decoration{text-decoration:none;}
+
 /*定位*/
 .block{ display:block}
 .vertical-middle{vertical-align: middle;}
 .horizontally-center{ margin:0 auto}
 .tl{text-align:left}
-.tc, #body .tc{text-align:center}
+.tc{text-align:center}
 .tr{text-align:right}
 .bc{margin-left:auto;margin-right:auto;}
 .fl{float:left;display:inline}
 .fr{float:right;display:inline}
-.cb, #body .cb{clear:both; float:none}
+.cb{clear:both; float:none}
 .cb-ie6{height:1px;display:block;clear:both;}
 .cl{clear:left}
 .cr{clear:right}
-.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-.clearfix{display:inline-block}* html .clearfix{height:1%}.clearfix{display:block}
+.clearFix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearFix{display:inline-block}* html .clearFix{height:1%}.clearFix{display:block}
 .vm{vertical-align:middle}
 .pr{position:relative}
 .pa{position:absolute}
@@ -66,6 +69,7 @@ abbr,acronym { border:0}
 .blankW1em{ width:1em;	display: inline-block; *overflow:hidden; *zoom:1; }
 .overflow-hidden{overflow:hidden}
 .overflow-auto{overflow:auto}
+
 /*长度高度*/
 .w10{width:10px}
 .w20{width:20px}
@@ -73,10 +77,13 @@ abbr,acronym { border:0}
 .w40{width:40px}
 .w50{width:50px}
 .w60{width:60px}
-.w70{width:70px} .w75{width:75px}
+.w70{width:70px}
+.w75{width:75px}
 .w80{width:80px}
 .w90{width:90px}
-.w100{width:100px} .w140{width:140px} .w150{width:150px}
+.w100{width:100px}
+.w140{width:140px}
+.w150{width:150px}
 .w200{width:200px}
 .w250{width:250px}
 .w300{width:300px}
@@ -86,12 +93,21 @@ abbr,acronym { border:0}
 .w700{width:700px}
 .w800{width:800px}
 .w1100{width:1100px}
-.w100p{width:100%}
-.w{width:100%}
-.h1{height:1px;} .h6{ height:6px}
-.h10{height:10px} .h12{height:12px} .h14{height:14px} .h15{height:15px}  .h18{height:18px}
-.h20{height:20px} .h25{height:25px} .h35{height:35px}
-.h30{height:30px} .h40{height:40px}
+
+.w-full{width:100%}
+
+.h1{height:1px;}
+.h6{ height:6px}
+.h10{height:10px}
+.h12{height:12px}
+.h14{height:14px}
+.h15{height:15px}
+.h18{height:18px}
+.h20{height:20px}
+.h25{height:25px}
+.h35{height:35px}
+.h30{height:30px}
+.h40{height:40px}
 .h50{height:50px}
 .h60{height:60px}
 .h80{height:80px}
@@ -100,49 +116,94 @@ abbr,acronym { border:0}
 .h-auto{height:auto}
 .h30{ height:30px}
 .h38{ height:38px}
-.h60{ height:60px} .lh60{ line-height:60px}
+.h60{ height:60px}
+.lh60{ line-height:60px}
 .h90{ height:90px}
 .h{height:100%}
+
 /*边距*/
-.m0, #body .m0{margin:0}
+.m0{margin:0}
 .m10{margin:10px}
 .m15{margin:15px} .m20{margin:20px}
 .m30{margin:30px}
-.mt0, #body .mt0{ margin-top:0}
-.mt3{margin-top:3px}  .mt5{margin-top:5px} .mt6{margin-top:6px} .mt7{margin-top:7px} .mt8{margin-top:8px}
-.mt10{margin-top:10px} .mt11{margin-top:11px}  .mt12{margin-top:12px} .mt13{margin-top:13px} .mt14{margin-top:14px} .mt15{margin-top:15px} .mt16{margin-top:16px}  .mt18{margin-top:18px}
+
+.mt0{margin-top:0}
+.mt3{margin-top:3px}
+.mt5{margin-top:5px}
+.mt6{margin-top:6px}
+.mt7{margin-top:7px}
+.mt8{margin-top:8px}
+.mt10{margin-top:10px}
+.mt11{margin-top:11px}
+.mt12{margin-top:12px}
+.mt13{margin-top:13px}
+.mt14{margin-top:14px}
+.mt15{margin-top:15px}
+.mt16{margin-top:16px}
+.mt18{margin-top:18px}
 .mt20{margin-top:20px}
 .mt30{margin-top:30px}
 .mt40{margin-top:40px}
-.mt50{margin-top:50px} .mt60{margin-top:60px}  .mt70{margin-top:70px}
-.mt100{margin-top:100px} .mt140{margin-top:100px}
-.mb0, #body .mb0{margin-bottom:0px;}
-.mb6{margin-bottom:6px} .mb7{margin-bottom:7px} .mb8{margin-bottom:8px}
-.mb10{margin-bottom:10px} .mb18{margin-bottom:18px}
+.mt50{margin-top:50px}
+.mt60{margin-top:60px}
+.mt70{margin-top:70px}
+.mt100{margin-top:100px}
+.mt140{margin-top:100px}
+.mb0{margin-bottom:0;}
+.mb6{margin-bottom:6px}
+.mb7{margin-bottom:7px}
+.mb8{margin-bottom:8px}
+.mb10{margin-bottom:10px}
+.mb18{margin-bottom:18px}
 .mb15{margin-bottom:15px}
-.mb20{margin-bottom:20px} .mb28{margin-bottom:28px}
-.mb30{margin-bottom:30px} .mb35{margin-bottom:35px}  .mb45{margin-bottom:45px}
-.mb50{margin-bottom:50px} .mb55{margin-bottom:55px} .mb60{margin-bottom:60px}
-.mb70{margin-bottom:70px} .mb80{margin-bottom:80px}
+.mb20{margin-bottom:20px}
+.mb28{margin-bottom:28px}
+.mb30{margin-bottom:30px}
+.mb35{margin-bottom:35px}
+.mb45{margin-bottom:45px}
+.mb50{margin-bottom:50px}
+.mb55{margin-bottom:55px}
+.mb60{margin-bottom:60px}
+.mb70{margin-bottom:70px}
+.mb80{margin-bottom:80px}
 .mb100{margin-bottom:100px}
-.ml0{margin-left:0} .ml5{margin-left:5px} .ml6{margin-left:6px}
-.ml10,#body .ml10{margin-left:10px} .ml13{margin-left:13px} .ml14{margin-left:14px}
+
+.ml0{margin-left:0}
+.ml5{margin-left:5px}
+.ml6{margin-left:6px}
+.ml10{margin-left:10px}
+.ml13{margin-left:13px}
+.ml14{margin-left:14px}
 .ml15{margin-left:15px}
-.ml20{margin-left:20px} .ml27{margin-left:27px}
-.ml30{margin-left:30px} .ml35{margin-left:35px} .ml40{margin-left:40px}  .ml45{margin-left:45px}
+.ml20{margin-left:20px}
+.ml27{margin-left:27px}
+.ml30{margin-left:30px}
+.ml35{margin-left:35px}
+.ml40{margin-left:40px}
+.ml45{margin-left:45px}
 .ml50{margin-left:50px}
 .ml100{margin-left:100px}
-.mr0{margin-right:0} .mr3{margin-right:3px}
-.mr5{margin-right:5px} .mr6{margin-right:6px}
+.mr0{margin-right:0}
+.mr3{margin-right:3px}
+.mr5{margin-right:5px}
+.mr6{margin-right:6px}
 .mr10{margin-right:10px}
-.mr13{margin-right:13px} .mr14{margin-right:14px}
+.mr13{margin-right:13px}
+.mr14{margin-right:14px}
 .mr15{margin-right:15px}
-.mr20{margin-right:20px} .mr23{margin-right:23px} .mr25{margin-right:25px}
-.mr30{margin-right:30px}  .mr35{margin-right:35px}   .mr36{margin-right:36px}    .mr37{margin-right:37px}
+.mr20{margin-right:20px}
+.mr23{margin-right:23px}
+.mr25{margin-right:25px}
+.mr30{margin-right:30px}
+.mr35{margin-right:35px}
+.mr36{margin-right:36px}
+.mr37{margin-right:37px}
 .mr40{margin-right:40px}
-.mr50{margin-right:50px} .mr60{margin-right:60px}
+.mr50{margin-right:50px}
+.mr60{margin-right:60px}
 .mr100{margin-right:100px}
 .mr200{margin-right:200px}
+
 .p5{padding:5px;} .p8{padding:8px;}
 .p9{padding:9px;}
 .p10{padding:10px;}
@@ -177,9 +238,10 @@ abbr,acronym { border:0}
 .pr30{padding-right:30px}
 .pr50{padding-right:50px}
 .pr100{padding-right:100px}
+
 /*常用色彩*/
 .bgWhite{ background:white;}
-#body .bg-none{ background:none}
+.bgNone{ background:none}
 .br0{border-right:0}
 .bt0{border-top:0}
 .bRed{border:1px dashed #F00}
@@ -187,7 +249,7 @@ abbr,acronym { border:0}
 .bGreen{border:1px dashed #0F0}
 .bBlue{border:1px dashed #00F}
 .cBlack{ color:black}
-#body .cWhite{ color:white}
+.cWhite{ color:white}
 .cDarkGray{ color:#6A6969}
 .cRed{color:red}
 .cBlue{color:blue}
@@ -197,9 +259,9 @@ abbr,acronym { border:0}
 .opacity05{opacity:0.5;filter:alpha(opacity=50); }
 
 /*超级重载*/
-#body .mr0{ margin-right:0}
-#body .br0{ border-right:0}
-#body .w96p{ width:96%}
+.mr0{ margin-right:0 !important;}
+.br0{ border-right:0 !important;}
+.w96p{ width:96% !important;}
 
 /*垂直居中和模型*/
 .c_wrap {
@@ -209,7 +271,7 @@ abbr,acronym { border:0}
 	*position: relative;
 	overflow: hidden;
 }
-.c_subwrap {
+.c_subWrap {
 	vertical-align: middle;
 	display: table-cell;
 	*position: absolute;
