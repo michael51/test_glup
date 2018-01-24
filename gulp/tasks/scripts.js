@@ -70,7 +70,9 @@ gulp.task('scripts-common', ()=>{
 		.pipe(plumber({ //handle error
 			errorHandle: function () {}
 		}))
-		.pipe(named()) //rename file
+		.pipe(named(function(file) {
+			return 'vendor.min'
+		}))
 		.pipe(
 			gulpWebpack({ //use webpack compile
 				module:{
@@ -84,14 +86,6 @@ gulp.task('scripts-common', ()=>{
 					chunks:false
 				}))
 			})
-		//	.pipe(gulp.dest('server/public/assets/js')) //assign file path
-		/**
-		 * 备份文件：重新起一个新名字，用于保存压缩的文件
-		 */
-		.pipe(rename({
-			basename: 'vender',
-			extname: '.min.js'
-		}))
 		/**
 		 * uglify code
 		 */

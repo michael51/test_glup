@@ -1,1 +1,1 @@
-export default __dirname;
+console.info('x');

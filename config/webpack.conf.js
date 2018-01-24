@@ -1,8 +1,8 @@
 import path from 'path';
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 
-const pageEntryPath = 'app/modules/pages/';
-const libsEntryPath = 'app/assets/js/libs';
+const pageEntryPath = 'app/modules/pages/'; //单页目录
+const libsEntryPath = 'app/assets/js/libs/'; //公共库目录
 
 /*配置独立页*/
 const pageEntry = [
@@ -13,7 +13,7 @@ const pageEntry = [
 
 /*配置公共文件*/
 const commonEntry = [
-	libsEntryPath + '*.js'
+	libsEntryPath + '**/*.js'
 ];
 
 export default {
