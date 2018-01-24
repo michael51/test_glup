@@ -15,7 +15,7 @@ import rename from 'gulp-rename';
 import uglify from 'gulp-uglify'; //处理JS压缩
 import {log,colors} from 'gulp-util'; //命令行工具输出包
 import args from './util/args';
-import WebpackConfig from "../../config/webpack.conf";
+import WebpackConfig from "../config/webpack.conf";
 
 /**
  * 创建scripts任务
@@ -32,7 +32,7 @@ gulp.task('scripts', ()=>{
 			let re = /.*\\(.*)\\/gi;
 
 			while (re.exec(fileUrl) !== null){
-				console.info(RegExp.$1);
+				console.info('处理页面', (RegExp.$1).yellowBG);
 			}
 
 			return RegExp.$1

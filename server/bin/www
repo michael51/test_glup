@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+require('console-color-mr');
 
 /**
  * Module dependencies.
@@ -15,7 +16,7 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-console.info('The port is', port);
+console.log('The port is'.cyan, port.green);
 
 /**
  * Create HTTP server.

@@ -25,11 +25,11 @@ export default {
 	},
 	resolve: {
 		alias : {
-			app      		: path.resolve(__dirname, '../app'),
-			modules      	: path.resolve(__dirname, '../app/modules'),
-			pages      		: path.resolve(__dirname, '../app/modules/pages'),
-			components      : path.resolve(__dirname, '../app/components'),
-			'@'      		: path.resolve(__dirname, '../')
+			app      		: path.resolve(__dirname, '../../app'),
+			modules      	: path.resolve(__dirname, '../../app/modules'),
+			pages      		: path.resolve(__dirname, '../../app/modules/pages'),
+			components      : path.resolve(__dirname, '../../app/components'),
+			'@'      		: path.resolve(__dirname, '../../')
 		}
 	},
 	module:{ //use webpack compile
