@@ -55,7 +55,7 @@
 	},
 	"scripts": {
 		"dev": "set PORT=3000&&gulp --watch",
-		"build": "gulp html",
+		"public": "set production=true&&gulp html",
 		"sass": "sass --watch app/assets/stylesheets:app/assets/stylesheets",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

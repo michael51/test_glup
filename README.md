@@ -16,7 +16,14 @@
 > npm install gulp gulp-if gulp-concat webpack webpack-stream vinyl-named gulp-livereload gulp-plumber gulp-rename gulp-uglify gulp-util yargs --save-dev
 
 - 配置args完成后，执行启动命令
-> gulp --watchR
+> gulp --watch
+
+调试环境
+> npm run dev
+
+生产环境
+> npm run public
+
 
 调试访问
 > http://localhost:3000/
@@ -45,3 +52,6 @@ server/app.js找到以下代码
 ```
 @import "../../components/MyComponents/index";
 ```
+
+## 增加页面
+配置router.js路由

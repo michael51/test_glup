@@ -18,10 +18,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(require('connect-livereload')()); //michael热更新
-app.use('/', index);
-app.use('/users', users);
+
+require('./router')(app);
+/*app.use('/', index);
+app.use('/users', users);*/
+
+app.use(express.static(path.join(__dirname, 'public'))); //访问静态文件
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
