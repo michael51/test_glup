@@ -1,5 +1,5 @@
 import VueRouter from "VueRouter";
-import Home from "./Routers/Home/index";
+import Home from "./Routers/Home/index.vue";
 import List from "./Routers/List";
 
 export default new VueRouter({

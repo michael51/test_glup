@@ -12,6 +12,7 @@ gulp.task('watch', (cb) => {
 
 	//如果app/**/*.js文件发生改变，则启动scripts构建脚本
 	gulp.watch('app/**/*.js', ['scripts']);
+	gulp.watch('app/**/*.vue', ['scripts']);
 
 	gulp.watch('app/**/*.ejs', ['pages']);
 
