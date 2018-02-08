@@ -13,14 +13,13 @@ gulp.task('watch', (cb) => {
 	//如果app/**/*.js文件发生改变，则启动scripts构建脚本
 	gulp.watch('app/**/*.js', ['scripts']);
 	gulp.watch('app/**/*.vue', ['scripts']);
-
+	gulp.watch('app/**/*.html', ['scripts']);
 	gulp.watch('app/**/*.ejs', ['pages']);
-
 	gulp.watch('app/**/*.css', ['css']);
 	// gulp.watch('app/**/*.scss', ['sass']);
 
 	//监控stylesheets的scss文件
-	gulp.watch('app/assets/stylesheets/**/*.scss', ['sass','pages']);
+	gulp.watch('app/assets/stylesheets/**/*.scss', ['sass', 'pages']);
 
 	//以下多个目录的scss因为是通过webpack加载，故修改之后，重新打包js
 	gulp.watch(['app/components/**/*.scss', 'app/modules/**/*.scss', 'app/models/**/*.scss'], ['scripts']);

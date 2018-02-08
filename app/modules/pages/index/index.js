@@ -7,7 +7,7 @@ import router from "./vue/Router";
 
 require('./index.scss');
 
-MyComponents({ name: 'Michael Ray'}); //给组件传递数据
+MyComponents({ name: 'Michael Ray'}); //给组件传递数据 【全局注册的】
 
 let data = function () {
 	return {
@@ -28,7 +28,6 @@ let vm2 = new Vue({
 		'hello-world': HelloWorld
 	}
 });
-
 
 let vm_router = new Vue({
 	el: "#app_router",
