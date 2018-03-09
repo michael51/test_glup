@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>新页面</title>
-	<link rel="stylesheet" href="assets/stylesheets/main.css?rev=@@">
-	<link rel="stylesheet" href="assets/stylesheets/index.css?rev=@@">
-</head>
-<body>
-	直接引入components的index
-	<%- include("layout/header.ejs") %>
-	<p class=""><a href="users" class="index">Hello Michael Ray2</a></p>
-	 <div class="icon-add">123</div>
-	 <div class="icon-leaf">123</div>
-	<div id="app">
-		<!--<p :class="className">测试绑定class</p>-->
-		<p :class="classArr">测试绑定class</p>
-		<button @click="handle('ok', $event)">按钮1</button>
-		<button @click="ff('ok', $event)">按钮2</button>
-		<my-component>插槽数据</my-component>
-	</div>
-
-	<div id="app2">
-		<hello-world></hello-world>
-		<hello-world></hello-world>
-	</div>
-
-
-	<!--测试路由-->
-	<div id="app_router">
-		<nav class="navbar navbar-inverse">
-			<div class="container">
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li>
-							<router-link to="/home">Home</router-link>
-						</li>
-						<li>
-							<router-link to="/list">List</router-link>
-						</li>
-						<li>
-							<router-link :to="{name:'hehe', params: {page: 1}}">具名路由</router-link>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<div class="container">
-			<router-view></router-view>
+	<head>
+		<meta charset="UTF-8">
+		<title>新页面</title>
+		<link rel="stylesheet" href="assets/stylesheets/main.css?rev=@@">
+		<link rel="stylesheet" href="assets/stylesheets/index.css?rev=@@">
+	</head>
+	<body>
+		直接引入components的index
+		<%- include("layout/header.ejs") %>
+		<p class=""><a href="users" class="index">Hello Michael Ray2</a></p>
+		<div class="icon-add">123</div>
+		<div class="icon-leaf">123</div>
+		<div id="app">
+			<!--<p :class="className">测试绑定class</p>-->
+			<p :class="classArr">测试绑定class</p>
+			<button @click="handle('ok', $event)">按钮1</button>
+			<button @click="ff('ok', $event)">按钮2</button>
+			<my-component>插槽数据</my-component>
 		</div>
-	</div>
 
-	<script src="assets/js/index.js"></script>
-</body>
+		<div id="app2">
+			<hello-world></hello-world>
+			<hello-world></hello-world>
+		</div>
+
+		<!--测试路由-->
+		<div id="app_router">
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li>
+								<router-link to="/home">Home</router-link>
+							</li>
+							<li>
+								<router-link to="/list">List</router-link>
+							</li>
+							<li>
+								<router-link :to="{name:'hehe', params: {page: 1}}">具名路由</router-link>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="container">
+				<transition name="fade" mode="out-in">
+					<router-view></router-view>
+				</transition>
+			</div>
+		</div>
+
+		<script src="assets/js/index.js"></script>
+	</body>
 </html>

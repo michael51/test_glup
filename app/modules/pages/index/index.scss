@@ -5,3 +5,24 @@
 .fff{
 	color: black;
 }
+
+.fade-enter-active {
+	transition: opacity .5s;
+}
+
+.fade-leave-active {
+	@extend .fade-enter-active;
+}
+
+.fade-enter {
+	opacity: 0
+}
+
+/*   .fade-enter-to { //进入的最后一瞬间
+	 color: red;
+  }*/
+
+.fade-leave-to {
+	@extend .fade-enter;
+}
+
