@@ -1,8 +1,8 @@
 require('console-color-mr');
 
 console.log('x1'.bold);
-console.log('x'.italic);
-console.log('x'.underline);
+console.log('x1'.italic);
+console.log('x1'.underline);
 console.log('inverse'.inverse);
 console.log('strikethrough'.strikethrough);
 console.log('white'.white);
