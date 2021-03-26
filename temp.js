@@ -1,6 +1,6 @@
 require('console-color-mr');
 
-console.log('x'.bold);
+console.log('x1'.bold);
 console.log('x'.italic);
 console.log('x'.underline);
 console.log('inverse'.inverse);
